@@ -2,6 +2,14 @@ import logging
 from utils import *
 
 def eliminate_twins(values, unit, twin_boxes, twin_value):
+    """
+    Eliminate twin values from boxes in the same unit.
+    Args:
+        values(dict): a dictionary of the form {'box_name': '123456789', ...}
+        unit: Unit that has twin boxes
+        twin_boxes: Boxes with twin values
+        twin_value: Twin values in the twin boxes
+    """
     for remove_box in unit:
         if (remove_box not in twin_boxes):
             for i in twin_value:
