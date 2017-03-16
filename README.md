@@ -2,12 +2,12 @@
 ## Introductory Project: Diagonal Sudoku Solver
 
 # Question 1 (Naked Twins)
-Q: How do we use constraint propagation to solve the naked twins problem?  
+Q: How do we use constraint propagation to solve the naked twins problem?
 A: We use the local constraint of two squares for further pruning the solution tree. If there are two values (in unassigned squares) that are only allowed in two different squares in the same unit, we can safely remove those values from the other unassigned squares in the same unit. We can then add the naked twins constraint to the Reduce Puzzle algorithm:
 Elimination -> Only choice -> Naked Twins.
 
 # Question 2 (Diagonal Sudoku)
-Q: How do we use constraint propagation to solve the diagonal sudoku problem?  
+Q: How do we use constraint propagation to solve the diagonal sudoku problem?
 A: It is solved by adding the diagonal units to the global unit list. This is going to further constraint the values allowed in the unassigned squares:
 row_units + column_units + square_units + diagonal_units
 
